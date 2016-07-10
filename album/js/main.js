@@ -44,25 +44,22 @@ var headersData = [
             'photos': ''
         }
     });
-
     var mouseOn = function () {
-        var eventUtil = {
-            getWheelDelta: function (event) {
-                return event.wheelDelta ? event.wheelDelta : -event.detail * 40;
+        var header = document.getElementById('header'),
+            mouseHandler = function (event) {
+                if (event.wheelDelta < 0) {
+                    header.style.display = "none";
             }
         };
-
-
-        function handleMouse(event) {
-            var delta = eventUtil.getWheelDelta(event);
-            alert(delta);
-        }
-
-        eventUtil.addHandler(document, "mouseWheel", handleMouse);
-        eventUtil.addHandler(document, "DOMMouseScroll", handleMouse);
+        document.body.onmousewheel = function (event) {
+            event = event || window.event;
+            mouseHandler(event);
+        };
+        document.body.addEventListener("DOMMouseScroll", function (event) {
+            mouseHandler(event);
+        });
     };
     mouseOn();
-
 })(window);
 
 

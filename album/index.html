@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<header class="columns">
+<header class="columns" id="header">
     <figure v-for="header in headers">
         <img src="{{ header.src }}">
         <figcaption>
@@ -23,7 +23,9 @@
             <span>Photos in CLF</span>
         </div>
         <div class="albums" id="albums">
-
+            <div v-for="photo in photos">
+                <img src="{{ photo.src }}">
+            </div>
         </div>
     </div>
 </div>

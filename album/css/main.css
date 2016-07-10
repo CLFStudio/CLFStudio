@@ -42,6 +42,7 @@ header figure:hover figcaption h2 {
 
 header figure:hover img {
     opacity: 1;
+    width: 100%;
 }
 
 header figure > img {
