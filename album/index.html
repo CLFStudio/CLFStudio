@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+
+<header class="columns">
+    <figure v-for="header in headers">
+        <img src="{{ header.src }}">
+        <figcaption>
+            <h2>{{ header.alt }}</h2>
+        </figcaption>
+    </figure>
+</header>
+
+<div class="content">
+    <div class="content-main">
+        <div class="title">
+            <span>Photos in CLF</span>
+        </div>
+        <div class="albums" id="albums">
+
+        </div>
+    </div>
+</div>
+
+<script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
+<script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
