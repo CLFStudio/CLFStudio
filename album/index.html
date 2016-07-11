@@ -23,8 +23,14 @@
             <span>Photos in CLF</span>
         </div>
         <div class="albums" id="albums">
-            <div v-for="photo in photos">
-                <img src="{{ photo.src }}">
+            <ul id="stackAnima" class="stack stack--iman">
+                <li class="stack__item" v-for="photo in photos">
+                    <img src="{{ photo.src }}"/>
+                </li>
+            </ul>
+            <div class="control">
+                <button class="left" id="button_left"> <</button>
+                <button class="right" id="button_right"> ></button>
             </div>
         </div>
     </div>
@@ -32,6 +38,9 @@
 
 <script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
 <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
+<script src="//cdn.bootcss.com/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="//cdn.bootcss.com/dynamics.js/1.1.0/dynamics.min.js"></script>
+<script src="js/anima.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
