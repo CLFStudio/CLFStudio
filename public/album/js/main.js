@@ -52,7 +52,6 @@ var options = {
 
 (function (window) {
     var animaStack = function () {
-        console.log("K");
         var Bleft = document.getElementById('button_left'),
             Bright = document.getElementById('button_right'),
             stack = new Stack(document.getElementById('stackAnima'), options);

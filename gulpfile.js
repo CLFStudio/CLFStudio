@@ -12,9 +12,10 @@ gulp.task('browser', function() {
 });
 
 gulp.task('preCss', function () {
-    return gulp.src('./public/honor/css/main.css')
+    return gulp.src('./public/drag/css/main.css')
         .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'Android >= 4.0'],
             cascade: true
         }))
-        .pipe(gulp.dest('./public/honor/css/pre.css'));
+        .pipe(gulp.dest('./public/drag/css/'));
 });
