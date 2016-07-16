@@ -6,7 +6,7 @@ var gulp        = require('gulp'),
 gulp.task('browser', function() {
     browserSync.init({
         server: {
-            baseDir: "./public"
+            baseDir: "./server"
         }
     });
 });
