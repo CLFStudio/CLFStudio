@@ -1,8 +1,10 @@
-;(function (window) {
+(function(window) {
 
     'use strict';
 
-    var support = {animations: Modernizr.cssanimations},
+    var support = {
+            animations: Modernizr.cssanimations
+        },
         animEndEventNames = {
             'WebkitAnimation': 'webkitAnimationEnd',
             'OAnimation': 'oAnimationEnd',
@@ -10,8 +12,8 @@
             'animation': 'animationend'
         },
         animEndEventName = animEndEventNames[Modernizr.prefixed('animation')],
-        onEndAnimation = function (el, callback) {
-            var onEndCallbackFn = function (ev) {
+        onEndAnimation = function(el, callback) {
+            var onEndCallbackFn = function(ev) {
                 if (support.animations) {
                     if (ev.target != this) return;
                     this.removeEventListener(animEndEventName, onEndCallbackFn);
@@ -22,8 +24,7 @@
             };
             if (support.animations) {
                 el.addEventListener(animEndEventName, onEndCallbackFn);
-            }
-            else {
+            } else {
                 onEndCallbackFn();
             }
         };
@@ -56,18 +57,32 @@
         perspectiveOrigin: '50% -50%',
         visible: 3,
         infinite: true,
-        onEndStack: function () {
+        onEndStack: function() {
             return false;
         },
         stackItemsAnimation: {
             duration: 500,
             type: dynamics.bezier,
-            points: [{'x': 0, 'y': 0, 'cp': [{'x': 0.25, 'y': 0.1}]}, {'x': 1, 'y': 1, 'cp': [{'x': 0.25, 'y': 1}]}]
+            points: [{
+                'x': 0,
+                'y': 0,
+                'cp': [{
+                    'x': 0.25,
+                    'y': 0.1
+                }]
+            }, {
+                'x': 1,
+                'y': 1,
+                'cp': [{
+                    'x': 0.25,
+                    'y': 1
+                }]
+            }]
         },
         stackItemsAnimationDelay: 0
     };
 
-    Stack.prototype._init = function () {
+    Stack.prototype._init = function() {
         this.el.style.WebkitPerspective = this.el.style.perspective = this.options.perspective + 'px';
         this.el.style.WebkitPerspectiveOrigin = this.el.style.perspectiveOrigin = this.options.perspectiveOrigin;
         var self = this;
@@ -78,28 +93,27 @@
                 item.style.pointerEvents = 'auto';
                 item.style.zIndex = i === 0 ? parseInt(this.options.visible + 1) : parseInt(this.options.visible - i);
                 item.style.WebkitTransform = item.style.transform = 'translate3d(0px, 0px, ' + parseInt(-1 * 50 * i) + 'px)';
-            }
-            else {
+            } else {
                 item.style.WebkitTransform = item.style.transform = 'translate3d(0,0,-' + parseInt(this.options.visible * 50) + 'px)';
             }
         }
         this.items[this.current].classList.add('stack__item--current');
     };
-    Stack.prototype.reject = function (callback) {
+    Stack.prototype.reject = function(callback) {
         this._next('reject', callback);
     };
 
-    Stack.prototype.accept = function (callback) {
+    Stack.prototype.accept = function(callback) {
         this._next('accept', callback);
     };
 
-    Stack.prototype.restart = function () {
+    Stack.prototype.restart = function() {
         this.hasEnded = false;
         this._init();
     };
 
-    Stack.prototype._next = function (action, callback) {
-        if (this.isAnimating || ( !this.options.infinite && this.hasEnded )) return;
+    Stack.prototype._next = function(action, callback) {
+        if (this.isAnimating || (!this.options.infinite && this.hasEnded)) return;
         this.isAnimating = true;
 
         var currentItem = this.items[this.current];
@@ -108,7 +122,7 @@
         currentItem.classList.add(action === 'accept' ? 'stack__item--accept' : 'stack__item--reject');
 
         var self = this;
-        onEndAnimation(currentItem, function () {
+        onEndAnimation(currentItem, function() {
             currentItem.style.opacity = 0;
             currentItem.style.pointerEvents = 'none';
             currentItem.style.zIndex = -1;
@@ -133,13 +147,12 @@
             if (!this.options.infinite) {
                 if (this.current + i >= this.itemsTotal - 1) break;
                 var pos = this.current + i + 1;
-            }
-            else {
+            } else {
                 var pos = this.current + i < this.itemsTotal - 1 ? this.current + i + 1 : i - (this.itemsTotal - this.current - 1);
             }
 
             var item = this.items[pos],
-                animateStackItems = function (item, i) {
+                animateStackItems = function(item, i) {
                     item.style.pointerEvents = 'auto';
                     item.style.opacity = 1;
                     item.style.zIndex = parseInt(self.options.visible - i);
@@ -149,8 +162,8 @@
                     }, self.options.stackItemsAnimation);
                 };
 
-            setTimeout(function (item, i) {
-                return function () {
+            setTimeout(function(item, i) {
+                return function() {
                     var preAnimation;
 
                     if (self.options.stackItemsPreAnimation) {
@@ -167,13 +180,12 @@
 
                         animProps.translateZ = parseInt(-1 * 50 * (i + 1));
 
-                        preAnimation.animationSettings.complete = function () {
+                        preAnimation.animationSettings.complete = function() {
                             animateStackItems(item, i);
                         };
 
                         dynamics.animate(item, animProps, preAnimation.animationSettings);
-                    }
-                    else {
+                    } else {
                         animateStackItems(item, i);
                     }
                 };

@@ -1,12 +1,12 @@
-var gulp        = require('gulp'),
+var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     autoprefixer = require('gulp-autoprefixer');
 
 // Static server
-gulp.task('browser', function() {
+gulp.task('browser', function () {
     browserSync.init({
         server: {
-            baseDir: "./server"
+            baseDir: "./"
         }
     });
 });
