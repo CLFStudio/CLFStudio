@@ -46,6 +46,16 @@
                 丛林蜂简称CLF，是2013年由学生自发组建的一支IT团队，后受江西师范大学计算机信息工程学院支持于2014年12月12日组建成为今天的丛林蜂工作室，工作室现有核心成员12余名。
             </div>
         </div>
+        <div class="tech">
+            <div class="techBox wow fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.6s">
+                <img src="public/img/nodejs.png">
+                <p>我们使用ES2015&&Node.js构建高效的现代的Web应用以应付高并发的业务挑战</p>
+            </div>
+            <div class="techBox wow fadeInUp" data-wow-duration="1.2s" data-wow-delay="0.6s">
+                <img src="public/img/php.png">
+                <p>采用PHP和Mysql作为服务底层以开发稳定可靠并且低耦合易扩展的大型应用与服务</p>
+            </div>
+        </div>
     </section>
 
     <section class="page page3" id="members">
@@ -56,6 +66,9 @@
             </div>
         </div>
         <div class="photo-board" id="board">
+            <div class="title">
+                <h1 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.4s">Our members</h1>
+            </div>
             <div class="content" id="container">
                 <div class="classes">
                     <div class="thumb">
@@ -258,27 +271,26 @@
     </section>
 
     <section class="page page4" id="album">
-        <div class="content">
-            <div class="content-main">
-                <div class="title">
-                    <span>滑动看看:- )</span>
+        <ul class="cards" id="cards">
+            <li class="card">
+                <img src="public/album/chg.png">
+                <div class="content">
+                    <h1>吃火锅</h1>
                 </div>
-                <div class="albums" id="album">
-                    <ul id="stackAnima" class="stack stack--iman">
-                        <li class="stack__item">
-                            <img src="public/album/IMG1.jpg" />
-                        </li>
-                        <li class="stack__item">
-                            <img src="public/album/IMG2.jpg" />
-                        </li>
-                    </ul>
-                    <div class="control">
-                        <button class="left" id="button_left"> <</button>
-                        <button class="right" id="button_right"> ></button>
-                    </div>
+            </li>
+            <li class="card">
+                <img src="public/album/l.png">
+                <div class="content">
+                    <h1>浪</h1>
                 </div>
-            </div>
-        </div>
+            </li>
+            <li class="card">
+                <img src="">
+                <div class="content">
+                    <h1>不知道是啥</h1>
+                </div>
+            </li>
+        </ul>
     </section>
 
     <section class="page page5">
@@ -331,13 +343,12 @@
     <script src="//cdn.bootcss.com/dynamics.js/1.1.0/dynamics.min.js"></script>
     <!--CDN-->
     <script src="public/js/main.js"></script>
-    <script src="public/js/anima.js"></script>
     <script>
         new WOW().init();
         var drag = new Drag('suga');
-        slackAnima();
         honorBox();
         fadeHeader();
+        cardsAnima();
     </script>
 </body>
 

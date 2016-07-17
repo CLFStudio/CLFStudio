@@ -72,50 +72,11 @@ function fadeHeader() {
             header.classList.add('headerShow');
         }
     }
-}
-
-function slackAnima() {
-    var options = {
-        stackItemsAnimation: {
-            duration: 800,
-            type: dynamics.spring
-        },
-        stackItemsPreAnimation: {
-            accept: {
-                elastic: true,
-                animationProperties: {
-                    translateX: 100,
-                    translateY: 10,
-                    rotateZ: 5
-                },
-                animationSettings: {
-                    duration: 100,
-                    type: dynamics.easeIn
-                }
-            },
-            reject: {
-                elastic: true,
-                animationProperties: {
-                    translateX: -100,
-                    translateY: 10,
-                    rotateZ: -5
-                },
-                animationSettings: {
-                    duration: 100,
-                    type: dynamics.easeIn
-                }
-            }
-        }
-    };
-    (function() {
-        var Bleft = document.getElementById('button_left'),
-            Bright = document.getElementById('button_right'),
-            stack = new Stack(document.getElementById('stackAnima'), options);
-        Bleft.addEventListener("click", function() {
-            stack.reject()
-        });
-        Bright.addEventListener("click", function() {
-            stack.accept()
-        });
-    })();
 };
+
+function cardsAnima(){
+    var cards = document.getElementById('cards');
+    cards.addEventListener('click', function(){
+        this.classList.add('transition');
+    });
+}
