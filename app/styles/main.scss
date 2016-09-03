@@ -48,9 +48,10 @@ header{
     padding-left: 2rem;
     vertical-align: middle;
     img{
-      height: 64px;
+      height: 32px;
     }
     span{
+      margin-left: 1rem;
       display: inline-block;
       line-height: 54px;
       font-size: 2rem;
@@ -111,6 +112,8 @@ header{
       color: #fff;;
       margin-bottom: 1rem;
       font-size: 3.2rem;
+      animation: slideup 1000ms 0ms forwards, fadein 1.5s forwards;
+      opacity: 0;
     }
 
     span{
@@ -567,7 +570,28 @@ header{
 }
 
 
+@keyframes slideup {
+  0% {
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
 
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 
+}
+
+@keyframes fadein {
+  0%, 30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
 
 

@@ -2,6 +2,8 @@
  * Created by mikum on 2016/7/17.
  */
 
+
+
 (function(window) {
   function Drag(el) {
     this.suga = document.getElementById(el);
