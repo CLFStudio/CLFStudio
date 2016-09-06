@@ -5,84 +5,89 @@
   <meta charset="UTF-8">
   <title>CLFStudio</title>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <header>
-    <h1>CLFStudio</h1>
+<header>
+  <h1>CLFStudio</h1>
 
-  </header>
+</header>
 
-  <div class="main">
-    <div class="container">
-      <div class="profile">
-        <h2>Profile</h2>
-      </div>
-      <div class="story">
-        <h2>Story</h2>
-      </div>
+<div class="main">
+  <div class="container" id="container">
+    <div class="profile">
+      <img src="images/LogoB.png" id="logo" class="animated"/>
+    </div>
+    <div class="story" id="story">
+      <h2>丛林蜂，是2013年由学生自发组建的一支IT团队，后受学院支持于2014年12月12日组建成为今天的丛林蜂工作室</h2>
+    </div>
 
-      <div class="members">
-        <div class="members-about">
-          <h2>Members</h2>
-        </div>
-
-        <div class="members-level">
-          <div class="members-level_class">
-            <h2>13</h2>
-          </div>
-          <div class="members-level_class">
-            <h2>14</h2>
-          </div>
-          <div class="members-level_class">
-           <h2>15</h2>
-          </div>
-        </div>
+    <div class="members">
+      <div class="members-about">
+        <h2>Members</h2>
       </div>
 
-      <div class="album">
-        <div class="album-photo">
+      <div class="members-level">
+        <div class="members-level_class">
+          <h2>13</h2>
         </div>
-        <div class="album-photo">
-
+        <div class="members-level_class">
+          <h2>14</h2>
         </div>
-
-        <div class="album-photo">
-
+        <div class="members-level_class">
+          <h2>15</h2>
         </div>
       </div>
+    </div>
 
-      <div class="todo">
-        <ul>
-          <li class="todo_list">
-            <h2>计算机作品赛</h2>
-            <h2>7月下旬</h2>
-            <h2><a href="#">文件链接</a></h2>
-          </li>
+    <div class="album">
+      <div class="album-photo">
+      </div>
+      <div class="album-photo">
 
-          <li class="todo_list">
-            <h2>计算机作品赛</h2>
-            <h2>7月下旬</h2>
-            <h2><a href="#">文件链接</a></h2>
-          </li>
-
-          <li class="todo_list">
-            <h2>计算机作品赛</h2>
-            <h2>7月下旬</h2>
-            <h2><a href="#">文件链接</a></h2>
-          </li>
-        </ul>
       </div>
 
-      <div class="join">
+      <div class="album-photo">
 
       </div>
+    </div>
+
+    <div class="todo">
+      <ul>
+        <li class="todo_list wow slideInLeft"  data-wow-duration="1s">
+          <h2>计算机作品赛</h2>
+          <h2>7月下旬</h2>
+          <h2><a href="#">文件链接</a></h2>
+        </li>
+
+        <li class="todo_list wow slideInLeft" data-wow-duration="1.4s">
+          <h2>计算机作品赛</h2>
+          <h2>7月下旬</h2>
+          <h2><a href="#">文件链接</a></h2>
+        </li>
+
+        <li class="todo_list wow slideInLeft" data-wow-duration="1.8s">
+          <h2>计算机作品赛</h2>
+          <h2>7月下旬</h2>
+          <h2><a href="#">文件链接</a></h2>
+        </li>
+      </ul>
+    </div>
+
+    <div class="join">
 
     </div>
-  </div>
-  <footer>
 
-  </footer>
+  </div>
+</div>
+<footer>
+
+</footer>
+<script src="//cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
 <script src="scripts/main.js"></script>
+<script>
+  new WOW().init();
+</script>
 </body>
 </html>

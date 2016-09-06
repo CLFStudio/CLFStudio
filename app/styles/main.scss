@@ -46,17 +46,27 @@ header{
       width: 100%;
       background-color: aliceblue;
       background-image: url("../images/background.jpg");
+      background-attachment: fixed;
       background-position: center center;
       background-size: cover;
+      display: flex;
+      img{
+        margin: auto;
+        opacity: 0;
+      }
     }
 
     .story{
-      height: 240px;
-      width: 40%;
+      height: auto;
+      width: 36%;
       float: right;
-      background-color: rgba(0, 255, 255, 0.46);
+      background-color: #fff;
+      box-shadow: 0 20px 40px rgba(0,0,0,.2);
       margin-top: -120px;
       margin-right: 6%;
+      box-sizing: border-box;
+      padding: 60px;
+      color: #93bad5;
     }
 
     .members{
@@ -128,15 +138,10 @@ header{
         li{
           margin: 2rem auto;
           width: 90%;
+          text-align: center;
           h2{
             display: inline-block;
-            margin-right: 2rem;
-          }
-          &:nth-child(1){
-            animation-delay: 1s;
-          }
-          &:nth-child(2){
-            animation-delay: 2s;
+            margin-right: 4rem;
           }
         }
       }
