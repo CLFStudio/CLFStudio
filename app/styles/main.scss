@@ -22,129 +22,107 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   overflow-y: scroll;
-}
-
-
-aside{
-  width: 600px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  text-align: center;
-  z-index: 99;
-  background-color: #3e3e3e;
-  nav{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    ul{
-      li{
-        display: block;
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity .5s ease,transform 0s ease .5s;
-        a{
-          transition: color .24s;
-          color: #fff;
-          &:hover{
-            color: #5bd9b3
-          }
-        }
-      }
-      .is-active{
-        a{
-          color: #5bd9b3;
-        }
-      }
-    }
-  }
-}
-aside.is-open{
-  ul{
-    li{
-      transform: translateY(0);
-      opacity: 1;
-      transition: transform .5s ease;
-      &:nth-child(1){
-        transition-delay: .04s
-      }
-      &:nth-child(2){
-        transition-delay: .08s
-      }
-      &:nth-child(3){
-        transition-delay: .12s
-      }
-      &:nth-child(4){
-        transition-delay: .16s
-      }
-      &:nth-child(5){
-        transition-delay: .2s
-      }
-      &:nth-child(6){
-        transition-delay: .24s
-      }
-      &:nth-child(7){
-        transition-delay: .28s
-      }
-    }
-  }
-}
-
-#wrapper{
   position: relative;
-  right: 0;
-  background-color: #fff;
-  transition: transform .4s ease .16s;
-  z-index: 199;
-  header{
-    height: 64px;
-    position: relative;
-    h1{
-      margin-left: 16px;
-    }
+}
+
+header{
+  height: 64px;
+  h1{
+    font-size: 2rem;
   }
-  #main{
-    display: block;
-    .intro{
-      section{
-        position: relative;
-        figure{
-          background-image: url("../images/background.webp");
-          background-size: cover;
-          background-position: center center;
-          background-repeat: no-repeat;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-        }
-        .content{
-          padding: 0 120px;
-          margin: 0 auto;
-          color: #fff;
-          z-index: 100;
-          position: relative;
-          max-width: 1440px;
-          h2{
-            font-size: 4.8rem;
-          }
+}
+
+.main{
+  width: 100%;
+  .container{
+    margin: 0 auto;
+    max-width: 1080px;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    .profile{
+      height: 600px;
+      width: 100%;
+      background-color: aliceblue;
+    }
+
+    .story{
+      height: 240px;
+      width: 40%;
+      float: right;
+      background-color: aqua;
+      margin-top: -120px;
+      margin-right: 6%;
+    }
+
+    .members{
+      position: relative;
+      width: 100%;
+      margin-top: 240px;
+
+      .members-about{
+        height: 100px;
+        width: 50%;
+        margin: 48px auto;
+        background-color: bisque;
+      }
+
+      .members-level{
+        height: 450px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .members-level_class{
+          width: 30%;
+          height: 90%;
+          background-color: cadetblue;
+          margin: 2rem;
         }
       }
     }
+
+    .album{
+      width: 100%;
+      height: 480px;
+      background-color: chocolate;
+      margin-top: 48px;
+
+      .album-photo{
+        width: 50%;
+        height: 100%;
+        background-color: aquamarine;
+        float: left;
+        &:nth-child(2){
+          height: 40%;
+          background-color: cornflowerblue;
+        }
+
+        &:nth-child(3){
+          height: 60%;
+          background-color: darkgoldenrod;
+        }
+      }
+    }
+
+    .todo{
+      margin: 24px 0;
+      width: 100%;
+      height: 360px;
+      background-color: chartreuse;
+    }
+
+    .join{
+      width: 100%;
+      height: 360px;
+      background-color: cornflowerblue;
+      display: inline-block;
+    }
   }
-
-
-}
-#wrapper.is-open{
-  transform: translateX(-75%);
 }
 
-.container{
-  padding-right: 30px;
-  padding-left: 30px;
-  section{
-    position: relative;
-  }
-}
 
+footer{
+  width: 100%;
+  height: 24px;
+  background-color: #edc584;
+}
