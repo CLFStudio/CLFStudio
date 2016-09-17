@@ -9,12 +9,30 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+
+<div class="menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="js-nav">
+  <ul>
+    <li><a href="">Home</a></li>
+    <li><a href="">成员介绍</a></li>
+    <li><a href="">相册</a></li>
+    <li><a href="">历届作品</a></li>
+    <li><a href="">比赛备战</a></li>
+    <li><a href="">加入我们与荣誉</a></li>
+  </ul>
+</div>
+
 <header>
-  <h1>CLFStudio</h1>
 
 </header>
 
 <div class="main">
+
   <div class="container" id="container">
     <div class="profile">
       <img src="images/LogoB.png" id="logo" class="animated"/>
@@ -42,14 +60,14 @@
     </div>
 
     <div class="album">
-      <div class="album-photo">
-      </div>
-      <div class="album-photo">
+      <div class="album-photo mask">
 
       </div>
-
-      <div class="album-photo">
-
+      <div class="album-photo_list">
+        <div class="album-photo_list_photo mask">
+        </div>
+        <div class="album-photo_list_photo mask">
+        </div>
       </div>
     </div>
 
@@ -76,13 +94,80 @@
     </div>
 
     <div class="join">
+      <div class="require">
+        <h2>自学能力强，对 Web 和 App 感兴趣的同学</h2>
+        <ul>
+          <li>在上学期间有足够的时间参与到工作室的项目中</li>
+          <li>对 Web 开发有浓厚的兴趣，审美功底强</li>
+          <li>对 App 开发有浓厚的兴趣（包括 Android, IOS）</li>
+          <li>想学习一些有趣的东西，成为有趣的人</li>
+        </ul>
+      </div>
+      <div class="welfare">
+        <h2>福利</h2>
+        <ul>
+          <li>
+            安静的学习环境
+          </li>
+          <li>
+            大神学长学姐的一对一辅导
+          </li>
+          <li>
+            参加各类比赛的机会
+          </li>
+          <li>
+            遇见有趣的人，有趣的自己
+          </li>
+        </ul>
+        <span id="honorButton">荣誉</span>
+      </div>
 
     </div>
 
+
+
   </div>
+
+  <div class="honorBox" id="honorBox">
+    <div class="close" id="close">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="main">
+      <div class="title">
+        <h1>HonorBox</h1>
+        <span class="mainB"><img src="images/goldMedal.png"></span>
+      </div>
+      <div class="container">
+        <div class="timeHonor">
+          <h1>2015</h1>
+          <ul>
+            <li>《2015中国大学生服务外包创新创业大赛》全国团体优胜奖</li>
+            <li>《2015江西省计算机作品大赛》江西省三等奖</li>
+            <li>《2015全国大学生计算机设计大赛》全国二等奖</li>
+          </ul>
+        </div>
+        <div class="timeHonor">
+          <h1>2014</h1>
+          <ul>
+            <li>《2014中国大学生计算机设计大赛》全国二等奖</li>
+            <li>《2014创拓中国大学生移动互联创新创意大赛》全国百强</li>
+            <li>《2014创拓中国大学生移动互联创新创意大赛》全国‘公益应用类’专项奖</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 <footer>
-
+  <ul>
+    <li><a href="https://github.com/CLFStudio">Github</a></li>
+    <li><a href="http://jq.qq.com/?_wv=1027&k=2C2Vblv">QQ group</a></li>
+    <li><a href="mailto:mikumkf@gmail.com">Email</a></li>
+    <li><a href="http://www.jxnu.edu.cn/">JXNU</a></li>
+    <li><a href="http://jsjxy.jxnu.edu.cn/">JXNUCS</a></li>
+  </ul>
 </footer>
 <script src="//cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
 <script src="scripts/main.js"></script>
