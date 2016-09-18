@@ -37,10 +37,4 @@ window.onload=function () {
     }
   });
 
-  project.addEventListener('mouseover', function (e) {
-    if(e.fromElement.classList[0]=='project-item'){
-      console.log(e.fromElement.attributes);
-      project.style.backgroundImage=e.fromElement.style.backgroundImage;
-    }
-  });
 };
